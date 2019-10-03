@@ -68,7 +68,6 @@ def distance(a, b):
     return 0.5 ** d
 
 
-
 def generate_k(data_set, k):
     return random.sample(data_set, k)
     
