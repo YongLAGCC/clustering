@@ -14,21 +14,10 @@ def point_avg(points):
     return center_point
 
 
-"""
-    Accepts a list of points, each with the same number of dimensions.
-    (points can have more dimensions than 2)
-    
-    Returns a new point which is the center of all the points.
-    """
-        
-        
-        # raise NotImplementedError()
-
-
 def update_centers(data_set, assignments):
     clustering = defaultdict(list)
-    for assign, point in zip(assignments,  data_set):
-        clustering[assign].append(point)
+    for assign, p in zip(assignments,  data_set):
+        clustering[assign].append( p)
     
     
     centers = []
