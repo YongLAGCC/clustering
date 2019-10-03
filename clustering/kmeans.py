@@ -28,7 +28,7 @@ def point_avg(points):
 def update_centers(data_set, assignments):
     clustering = defaultdict(list)
     for assign, point in zip(assignments,  data_set):
-        clustering[assign].append(list)
+        clustering[assign].append(point)
     
     
     centers = []
