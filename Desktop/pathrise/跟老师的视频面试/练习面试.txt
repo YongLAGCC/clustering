@@ -1,0 +1,44 @@
+
+跟Mick 面试： 
+// package whatever; // don't place package name!
+
+// Given an immutable array of integers a and an integer k, this array has below invariance:
+
+// any integer inside subarray with window size k is unique each other. 
+// for example:
+// A = [1, 2, 5, 6, 4, 13, 50, 17, 6] k = 5
+
+
+// The question is:
+
+// implement a function:
+//       boolean canRemove(int[] a, int k, int index);
+// after removing index-th location integer in the given array, if the invariance is still maintained, return true, otherwise return false
+
+// for above example:
+
+// canRemove([1, 2, 5, 6, 4, 13, 50, 17, 6], 5, 6) -> false
+// canRemove([1, 2, 5, 6, 4, 13, 50, 17, 6], 5, 1) -> true
+
+/*
+ need: two for loop, need range of the outter loop to check the index. 
+      2, if index inside the loop, 
+      3, check the ele,  set to save the unique k vals. then check the next ele in the outter index+1. if in set, return .
+      
+      idea:  if(k.size() < index)  [1,2,3,4 5]
+      
+      // check the first k eme before index  
+          
+      index - size + 1 , index + size - 1
+*/
+import java.io.*;
+
+class MyCode {
+	public static void main (String[] args) {
+		System.out.println("Hello Java");
+	}
+  
+  public 
+}
+
+

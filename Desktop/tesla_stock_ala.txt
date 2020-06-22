@@ -1,0 +1,9 @@
+We want to find the corrlation of the tesla stock with media. we used regression model to analyze the factors that influence the stock price change. The data input is from different news company, such as, Yahoo Finical, CNN, wall street journal and tweeter. 
+
+After conducting sentimental analysis (through R libraries), we use the sentiment, the number of related news, and the speed of transmission for the regress model. We analyze Tesla’s daily stock prices and trading volumes. 
+
+We test the model, and we calculate the chordation, in the end. The result of the correlation value close to zero, which means they do not have the relation. 
+ 
+Later on, we were trying to find more factors that may affect the stock price change, . 
+
+We also make the shine app for new stock learners online.   

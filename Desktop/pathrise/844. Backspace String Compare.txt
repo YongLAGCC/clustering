@@ -1,0 +1,58 @@
+//844. Backspace String Compare
+//Time com: O(M+N) m & n is the length of string S and T respectively; 
+//Space com: O(M+N)
+  
+class Solution {
+    public boolean backspaceCompare(String S, String T) {
+     //questions? 
+        // use stack. 
+        if(compare(S).equals(compare(T)) )
+            return true; 
+        return false; 
+        
+    }
+    public String compare(String input) {
+       
+        Stack stack = new Stack(); 
+        
+        for(int i = 0; i < input.length(); ++i) {
+            if(input.charAt(i) >= 'a' && input.charAt(i) <='z'){
+                stack.push(input.charAt(i)); 
+            } else if(!stack.isEmpty())
+                stack.pop();
+            
+        }
+        return stack.toString();
+    }
+        // question? 
+        //backtrack by stringBuilder
+
+
+// 844 use StringBuilder.
+
+//         int counter = 0; 
+//         if(compare(S).equals(compare(T) ))
+//             return true; 
+//         return false;
+    
+//     }
+//     public String compare(String input) {
+//         int counter = 0; 
+//         StringBuilder sb = new StringBuilder(input); // "ab##"
+//         String ans = ""; 
+        
+//         for(int i = input.length() - 1; i >= 0; i--) {
+//             if(sb.charAt(i) >= 'a' && sb.charAt(i) <= 'z') {
+//                 if( counter == 0)
+//                     ans += sb.charAt(i);
+//                 else {
+//                     counter--; 
+//                     continue; 
+//                 }
+//             } else {
+//                 counter++; 
+//             }
+            
+//         } return ans; 
+//     }
+}

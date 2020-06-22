@@ -1,0 +1,149 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+/*
+Suppose we have some input data describing a graph of relationships between parents and children over multiple generations. The data is formatted as a list of (parent, child) pairs, where each individual is assigned a unique integer identifier.
+
+For example, in this diagram, 3 is a child of 1 and 2, and 5 is a child of 4:
+
+1   2    4
+ \ /   / | \
+  3   5  8  9
+   \ / \     \
+    6   7    11
+
+
+parentChildPairs = [
+    (1, 3), (2, 3), (3, 6), (5, 6),
+    (5, 7), (4, 5), (4, 8), (4, 9), (9, 11)
+]
+
+{
+    key: value
+    parent: count
+    1      1
+    2      0
+    3      0
+}
+
+ADJACENCY LIST
+{
+    child: parent how many parents does each child have?
+    parent: child  how many children does each parent have?
+    3: [1, 2]
+    6: [3]
+    11: []
+}
+
+Sample input/output (pseudodata):
+
+
+
+Write a function that takes this data as input and returns two collections: one containing all individuals with zero known parents, and one containing all individuals with exactly one known parent.
+
+
+Output may be in any order:
+
+findNodesWithZeroAndOneParents(parentChildPairs) => [
+  [1, 2, 4],       // Individuals with zero parents
+  [5, 7, 8, 9, 11] // Individuals with exactly one parent
+]
+
+n: number of pairs in the input
+
+
+*/
+
+public List<List<Integer>> findNodesWithZeroAndOneParents(int [][] graphPairs) {
+    List<List<Integer>> ans = new ArrayList<>(); 
+    List<Integer> list = new ArrayList<>(); 
+    if(graphPairs.length == 0) return ans; 
+    HashMap<Integer, Integer> map = new HashMap<>(); 
+    
+    check(graphPairs, list, map );
+     
+     for(Integer key: keySet()) {
+        if(map.get(key) == 1){
+            list.add(key);
+        }
+    }
+    ans.add(list); 
+    
+    return ans; 
+}
+public void  check(int [][] graphPairs, List<Integer> list, HashMap<Integer, Integer> map ) {
+    
+    
+    for(int [] pair :  graphPairs) {
+        if(!map.containsKey(pair[1])) {
+            map.put(pair[1], 0);
+        } else {
+            map.getOrDefault(pair[1], map.get(pair[0]) + 1 );
+        }
+    }
+    
+   
+} 
+
+
+ public static void main(String[] args) {
+        
+        
+        int[][] parentChildPairs = new int[][] {
+            {1, 3}, {2, 3}, {3, 6}, {5, 6}, {5, 7},
+            {4, 5}, {4, 8}, {4, 9}, {9, 11}
+        };
+        System.out.println(parentChildPairs);
+   }
+}
+////
+
+
+
+// package whatever; // don't place package name!
+
+// Given an immutable array of integers a and an integer k, this array has below invariance:
+
+// any integer inside subarray with window size k is unique each other. 
+// for example:
+// A = [1, 2, 5, 6, 4, 13, 50, 17, 6] k = 5
+
+
+// The question is:
+
+// implement a function:
+//       boolean canRemove(int[] a, int k, int index);
+// after removing index-th location integer in the given array, if the invariance is still maintained, return true, otherwise return false
+
+// for above example:
+
+// canRemove([1, 2, 5, 6, 4, 13, 50, 17, 6], 5, 6) -> false
+// canRemove([1, 2, 5, 6, 4, 13, 50, 17, 6], 5, 1) -> true
+
+/*
+ need: two for loop, need range of the outter loop to check the index. 
+      2, if index inside the loop, 
+      3, check the ele,  set to save the unique k vals. then check the next ele in the outter index+1. if in set, return .
+      
+      idea:  if(k.size() < index)  [1,2,3,4 5]
+      
+      // check the first k eme before index  
+          
+      index - size + 1 , index + size - 1
+*/
+import java.io.*;
+
+class MyCode {
+	public static void main (String[] args) {
+		System.out.println("Hello Java");
+	}
+  
+  public 
+}
+
+
